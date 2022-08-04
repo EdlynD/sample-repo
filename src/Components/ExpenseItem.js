@@ -28,6 +28,7 @@ const ExpenseItem = () => {
     <div>
       {expenses.map((item, index) => (
         <div key={index} className="expense-item-container">
+          <div>dsadsa</div>
           <div className="date-container">
             <div>{item.date.toLocaleString("en-US", { month: "long" })}</div>
             <div>{item.date.toLocaleString("en-US", { day: "2-digit" })}</div>
