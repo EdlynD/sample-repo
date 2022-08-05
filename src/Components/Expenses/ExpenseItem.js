@@ -5,7 +5,7 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const handleClick = () => {
-    console.log("trigger");
+    console.log("clicked");
   };
   return (
     <Card className="expense-item-container">
