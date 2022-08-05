@@ -4,8 +4,8 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const handleClick = () => {
-    console.log("clicked");
+  const handleOnClick = () => {
+    console.log("Clicked");
   };
   return (
     <Card className="expense-item-container">
@@ -16,7 +16,8 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
       </div>
       <div className="expense-item-price">${props.amount}</div>
-      <button onClick={handleClick}>Change Title</button>
+
+      <button onClick={handleOnClick}>Change Title</button>
     </Card>
   );
 };

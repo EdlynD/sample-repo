@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 
@@ -6,7 +7,7 @@ const Expenses = (props) => {
   const expense = props.items;
 
   return (
-    <div className="expenses">
+    <Card className="expenses">
       {expense.map((item, index) => (
         <ExpenseItem
           key={index}
@@ -15,7 +16,7 @@ const Expenses = (props) => {
           date={item.date}
         />
       ))}
-    </div>
+    </Card>
   );
 };
 
