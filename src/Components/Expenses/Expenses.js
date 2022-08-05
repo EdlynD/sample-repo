@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
+import { ExpenseContext } from "../Context/ExpenseContext";
 import "./Expenses.css";
 
 const Expenses = (props) => {
