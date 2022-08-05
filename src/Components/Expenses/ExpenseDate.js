@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ExpenseContext } from "../Context/ExpenseContext";
+
 import "./ExpenseDate.css";
 
 const ExpenseDate = (props) => {
