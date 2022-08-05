@@ -4,9 +4,6 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
-  const handleOnClick = () => {
-    console.log("Clicked");
-  };
   return (
     <Card className="expense-item-container">
       <div className="date-container">
