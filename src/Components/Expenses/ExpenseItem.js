@@ -4,6 +4,9 @@ import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
+  const handleClick = () => {
+    console.log("trigger");
+  };
   return (
     <Card className="expense-item-container">
       <div className="date-container">
@@ -13,7 +16,7 @@ const ExpenseItem = (props) => {
         <h2>{props.title}</h2>
       </div>
       <div className="expense-item-price">${props.amount}</div>
-      <button>Change Title</button>
+      <button onClick={handleClick}>Change Title</button>
     </Card>
   );
 };
