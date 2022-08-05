@@ -5,7 +5,7 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const handleOnClick = () => {
-    console.log("Clicked");
+    console.log("Updated");
   };
   return (
     <Card className="expense-item-container">
