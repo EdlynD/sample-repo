@@ -11,7 +11,7 @@ function App() {
   return (
     <ExpenseContext.Provider value={{ list, setList }}>
       <NewExpense />
-      <Expenses items={list} />
+      <Expenses />
     </ExpenseContext.Provider>
   );
 }
