@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { ExpenseContext } from "../Context/ExpenseContext";
+import React from "react";
 
 import "./ExpenseDate.css";
 
@@ -12,9 +11,7 @@ const ExpenseDate = (props) => {
       <div className="day">
         {props?.date.toLocaleString("en-US", { day: "2-digit" })}
       </div>
-      <div className="year">
-        {props?.date.toLocaleString("en-US", { yr: "2-digit" })}
-      </div>
+      <div className="year">{props?.date.getFullYear()}</div>
     </div>
   );
 };
