@@ -8,21 +8,25 @@ const ExpenseForm = () => {
   const { list, setList } = useContext(ExpenseContext);
 
   const [newList, setNewList] = useState({
-    id: Math.random(),
+    id: "",
     title: "",
     amount: "",
     date: "",
   });
 
   const onChangeHandler = (e, name) => {
-    setNewList({ ...newList, [name]: e });
+    if (name === "date") {
+      setNewList({ ...newList, id: Math.random(), [name]: new Date(e) });
+    } else {
+      setNewList({ ...newList, id: Math.random(), [name]: e });
+    }
   };
 
   const onSubmitHandler = (e) => {
     setList([...list, newList]);
+    e.target.reset();
     e.preventDefault();
   };
-  console.log(list);
 
   return (
     <div>
@@ -35,6 +39,7 @@ const ExpenseForm = () => {
                 name={form.name}
                 onChange={(e) => onChangeHandler(e.target.value, e.target.name)}
                 type={form.type}
+                required
               />
             </div>
           ))}
