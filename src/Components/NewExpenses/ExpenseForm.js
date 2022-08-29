@@ -4,7 +4,7 @@ import formHelper from "../Utils/FormHelper";
 
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const { list, setList } = useContext(ExpenseContext);
 
   const [newList, setNewList] = useState({
@@ -17,6 +17,8 @@ const ExpenseForm = () => {
   const onChangeHandler = (e, name) => {
     if (name === "date") {
       setNewList({ ...newList, id: Math.random(), [name]: new Date(e) });
+    } else if (name === "amount") {
+      setNewList({ ...newList, id: Math.random(), [name]: +e });
     } else {
       setNewList({ ...newList, id: Math.random(), [name]: e });
     }
@@ -45,6 +47,9 @@ const ExpenseForm = () => {
           ))}
         </div>
         <div className="new-expense-action">
+          <button className="Cancel" type="button" onClick={props.onClickNot}>
+            Cancel
+          </button>
           <button type="submit">Add Expense</button>
         </div>
       </form>

@@ -4,6 +4,7 @@ import ExpenseItem from "./ExpenseItem";
 import { ExpenseContext } from "../Context/ExpenseContext";
 import "./Expenses.css";
 import ExpenseFilter from "./ExpenseFilter";
+import ExpensesChart from "./ExpensesChart";
 
 const Expenses = () => {
   const { list, setList } = useContext(ExpenseContext);
@@ -17,7 +18,10 @@ const Expenses = () => {
   const onChangeFilterYear = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
-  console.log(filteredYear);
+
+  const filteredList = list.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
 
   return (
     <div>
@@ -26,18 +30,24 @@ const Expenses = () => {
           selected={filteredYear}
           onChangeFilter={onChangeFilterYear}
         />
-        {list.map((item, index) => (
-          <div className="expenseItem" key={index}>
-            <ExpenseItem
-              className="item"
-              id={item.id}
-              title={item.title}
-              amount={item.amount}
-              date={item.date}
-            />
-            <button onClick={() => onClick(item.id)}>Delete</button>
-          </div>
-        ))}
+        <ExpensesChart expenses={filteredList} />
+
+        {filteredList.length === 0 ? (
+          <p className="sample">No Expenses found</p>
+        ) : (
+          filteredList.map((item, index) => (
+            <div className="expenseItem" key={index}>
+              <ExpenseItem
+                className="item"
+                id={item.id}
+                title={item.title}
+                amount={item.amount}
+                date={item.date}
+              />
+              <button onClick={() => onClick(item.id)}>Delete</button>
+            </div>
+          ))
+        )}
       </Card>
     </div>
   );

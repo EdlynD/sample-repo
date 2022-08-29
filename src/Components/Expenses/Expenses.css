@@ -30,6 +30,19 @@
   background-color: #4b4b4b;
 }
 
+.sample {
+  color: #fff;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px auto;
+  font-size: 1.5rem;
+  background-color: #4b4b4b;
+  width: 80%;
+  border-radius: 15px;
+}
+
 @media (min-width: 580px) {
   .expenseItem {
     flex-direction: row;
